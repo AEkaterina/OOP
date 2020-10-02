@@ -127,63 +127,79 @@ namespace lab2
             //Console.WriteLine(sb);
 
 
-            //3a Создайте целый двумерный массив и выведите его на консоль в отформатированном виде(матрица).
-            int[,] arr = new int[3, 3] { { 5, 8, 3 }, { 7, 9, 16 }, { 49, 37, 2 } };
-            for(int i=0;i<3;i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    Console.Write(arr[i, j] + " ");             
-                }
-                Console.WriteLine();
-            }
+            ////3a Создайте целый двумерный массив и выведите его на консоль в отформатированном виде(матрица).
+            //int[,] arr = new int[3, 3] { { 5, 8, 3 }, { 7, 9, 16 }, { 49, 37, 2 } };
+            //for(int i=0;i<3;i++)
+            //{
+            //    for (int j = 0; j < 3; j++)
+            //    {
+            //        Console.Write(arr[i, j] + " ");             
+            //    }
+            //    Console.WriteLine();
+            //}
 
-            /*3b Создайте одномерный массив строк. Выведите на консоль его содержимое, длину массива. 
-             Поменяйте произвольный элемент (пользователь определяет позицию и значение)*/
-            string[] arrstr = { "one", "two", "three", "four" };
-            for(int i=0; i<4;i++)
-                Console.Write(arrstr[i] + " ");
+            ///*3b Создайте одномерный массив строк. Выведите на консоль его содержимое, длину массива. 
+            // Поменяйте произвольный элемент (пользователь определяет позицию и значение)*/
+            //string[] arrstr = { "one", "two", "three", "four" };
+            //for(int i=0; i<4;i++)
+            //    Console.Write(arrstr[i] + " ");
 
-            Console.WriteLine("\nДлина массива = " + arrstr.Length);
+            //Console.WriteLine("\nДлина массива = " + arrstr.Length);
 
-            Console.Write("Ведите позицию элемента массива: ");
-            int a = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Введите новое значение: ");
-            string newelem = Console.ReadLine();
-            arrstr[a] = newelem;
-            for (int i = 0; i < 4; i++)
-                Console.Write(arrstr[i] + " ");
-            Console.WriteLine();
+            //Console.Write("Ведите позицию элемента массива: ");
+            //int a = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Введите новое значение: ");
+            //string newelem = Console.ReadLine();
+            //arrstr[a] = newelem;
+            //for (int i = 0; i < 4; i++)
+            //    Console.Write(arrstr[i] + " ");
+            //Console.WriteLine();
 
-            /*3c Создайте ступечатый (не выровненный) массив вещественных чисел с 3 - мя строками, в каждой из которых 2,
-             3 и 4 столбцов соответственно.Значения массива введите с консоли.*/
-            int[][] ar = new int[3][];
-            ar[0] = new int[2];
-            ar[1] = new int[3];
-            ar[2] = new int[4];
-            Console.WriteLine("Введите значения массива:");
-            for (int i = 0; i < 2; i++)                                     //ввод
-                ar[0][i] = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < 3; ++i)
-                ar[1][i] = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < 4; ++i)
-                ar[2][i] = Convert.ToInt32(Console.ReadLine());
+            ///*3c Создайте ступечатый (не выровненный) массив вещественных чисел с 3 - мя строками, в каждой из которых 2,
+            // 3 и 4 столбцов соответственно.Значения массива введите с консоли.*/
+            //int[][] ar = new int[3][];
+            //ar[0] = new int[2];
+            //ar[1] = new int[3];
+            //ar[2] = new int[4];
+            //Console.WriteLine("Введите значения массива:");
+            //for (int i = 0; i < 2; i++)                                     //ввод
+            //    ar[0][i] = Convert.ToInt32(Console.ReadLine());
+            //for (int i = 0; i < 3; ++i)
+            //    ar[1][i] = Convert.ToInt32(Console.ReadLine());
+            //for (int i = 0; i < 4; ++i)
+            //    ar[2][i] = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 0; i < 2; i++)                                     //ввод
-                Console.Write(ar[0][i] + "  ");
-            Console.WriteLine();
-            for (int i = 0; i < 3; ++i)
-                Console.Write(ar[1][i] + "  ");
-            Console.WriteLine();
-            for (int i = 0; i < 4; ++i)
-                Console.Write(ar[2][i] + "  ");
-            Console.WriteLine();
+            //for (int i = 0; i < 2; i++)                                     //ввод
+            //    Console.Write(ar[0][i] + "  ");
+            //Console.WriteLine();
+            //for (int i = 0; i < 3; ++i)
+            //    Console.Write(ar[1][i] + "  ");
+            //Console.WriteLine();
+            //for (int i = 0; i < 4; ++i)
+            //    Console.Write(ar[2][i] + "  ");
+            //Console.WriteLine();
 
-            //3d Создайте неявно типизированные переменные для хранения массива и строки.
-            var massiv = new int [] { 1, 89, 105 };
-            var strstr = "Катя";
-            Console.WriteLine("\n" + strstr);
+            ////3d Создайте неявно типизированные переменные для хранения массива и строки.
+            //var massiv = new int [] { 1, 89, 105 };
+            //var strstr = "Катя";
+            //Console.WriteLine("\n" + strstr);
 
+
+            /*4 Задайте кортеж из 5 элементов с типами int, string, char, string, ulong.
+             Выведите кортеж на консоль целиком и выборочно ( например 1, 3, 4 элементы) */
+            (int, string, char, string, ulong) tpl = (99, "Klepa", 'P', "Строка", 49);
+            Console.Write(tpl.Item1 + " " + tpl.Item2 + " " + tpl.Item3 + " " + tpl.Item4 + " " + tpl.Item5);   //целиком
+            Console.Write("\n" + tpl.Item2 + " " + tpl.Item5);
+            //распаковка
+            var (aa, bb) = (492, "658");
+            Console.WriteLine($"\n{aa}, {bb}");
+
+            var first = (f1: 22, f2: 33);
+            var sec = (s1: 22, s2: 33);
+            if (first == sec)
+                Console.WriteLine("Кортежи равны");
+            else
+                Console.WriteLine("Кортежи не равны");
 
 
         }
