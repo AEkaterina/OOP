@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Text;
-
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace lab2
 {
@@ -185,22 +184,39 @@ namespace lab2
             //Console.WriteLine("\n" + strstr);
 
 
-            /*4 Задайте кортеж из 5 элементов с типами int, string, char, string, ulong.
-             Выведите кортеж на консоль целиком и выборочно ( например 1, 3, 4 элементы) */
-            (int, string, char, string, ulong) tpl = (99, "Klepa", 'P', "Строка", 49);
-            Console.Write(tpl.Item1 + " " + tpl.Item2 + " " + tpl.Item3 + " " + tpl.Item4 + " " + tpl.Item5);   //целиком
-            Console.Write("\n" + tpl.Item2 + " " + tpl.Item5);
-            //распаковка
-            var (aa, bb) = (492, "658");
-            Console.WriteLine($"\n{aa}, {bb}");
+            ///*4 Задайте кортеж из 5 элементов с типами int, string, char, string, ulong.
+            // Выведите кортеж на консоль целиком и выборочно ( например 1, 3, 4 элементы) */
+            //(int, string, char, string, ulong) tpl = (99, "Klepa", 'P', "Строка", 49);
+            //Console.Write(tpl.Item1 + " " + tpl.Item2 + " " + tpl.Item3 + " " + tpl.Item4 + " " + tpl.Item5);   //целиком
+            //Console.Write("\n" + tpl.Item2 + " " + tpl.Item5);
+            ////распаковка
+            //var (aa, bb) = (492, "658");
+            //Console.WriteLine($"\n{aa}, {bb}");
 
-            var first = (f1: 22, f2: 33);
-            var sec = (s1: 22, s2: 33);
-            if (first == sec)
-                Console.WriteLine("Кортежи равны");
-            else
-                Console.WriteLine("Кортежи не равны");
+            //var first = (f1: 22, f2: 33);
+            //var sec = (s1: 22, s2: 33);
+            //if (first == sec)
+            //    Console.WriteLine("Кортежи равны");
+            //else
+            //    Console.WriteLine("Кортежи не равны");
 
+
+            //5Создайте локальную функцию в main и вызовите ее
+            void main (int [] mass, string st)
+            {
+                int max, min, sum;
+                char let;
+                max = mass.Max<int>();
+                min = mass.Min<int>();
+                sum = mass.Sum();
+                let = st[0];
+                var tup = Tuple.Create(max, min, sum, let);
+                Console.WriteLine(tup);
+            }
+
+            int[] m = { 5, 8, 1, 10, 93, 7 };
+            string hello= "Hello";
+            main(m, hello);
 
         }
     }
