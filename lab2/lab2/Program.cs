@@ -37,7 +37,7 @@ namespace lab2
             //Console.WriteLine($"double = {dl}, int = {ii} ");            
 
             ////1b Выполните 5 операций явного и 5 неявного приведения.
-            
+
             ////неявное
             //int i = 135487;
             //long il = i;
@@ -76,55 +76,114 @@ namespace lab2
 
 
 
-            //2a Объявите строковые литералы. Сравните их.
-            string str1 = "cat";
-            string str2 = "kitten";
-            int comp = String.Compare(str1, str2);
-            if (comp == 0)
-                Console.WriteLine("Строки {0} и {1} одинаковы", str1, str2);
-            else
-                Console.WriteLine("строки {0} и {1} различны", str1, str2);
+            ////2a Объявите строковые литералы. Сравните их.
+            //string str1 = "cat";
+            //string str2 = "kitten";
+            //int comp = String.Compare(str1, str2);
+            //if (comp == 0)
+            //    Console.WriteLine("Строки {0} и {1} одинаковы", str1, str2);
+            //else
+            //    Console.WriteLine("строки {0} и {1} различны", str1, str2);
 
-            /*2b Создайте три строки на основе String. Выполните: сцепление, копирование, выделение подстроки, 
-              разделение строки на слова, вставки подстроки в заданную позицию, удаление заданной подстроки. */
-            string s1 = "Astapkina ";
-            string s2 = "Ekaterina";
-            string s3 = "Hello and goodbye";
-            string s4;
-            Console.WriteLine(s1 + s2);    //сцепление 
-            s4 = s3;                        //копирование
-            Console.WriteLine($"Строка \"{s3}\" скопирована в строку s4");
-            Console.WriteLine("Выделение из строки слова " + s4.Substring(10));        //выделение подстроки
-            string[] words = s3.Split(' ');                 //разделение на слова
-            Console.WriteLine($"Разделим строку \"{s3}\" на слова:");
-            foreach (string s in words)
-                Console.WriteLine(s);
-            string news1 = "Hello  and goodbye";                 //вставка подстроки
-            string news2 = news1.Insert(6, s2);
-            Console.WriteLine(news2);
-            Console.WriteLine($"Удаление подстроки в строке \"{news2}\": " + news2.Remove(15));         //удаление подстроки
+            ///*2b Создайте три строки на основе String. Выполните: сцепление, копирование, выделение подстроки, 
+            //  разделение строки на слова, вставки подстроки в заданную позицию, удаление заданной подстроки. */
+            //string s1 = "Astapkina ";
+            //string s2 = "Ekaterina";
+            //string s3 = "Hello and goodbye";
+            //string s4;
+            //Console.WriteLine(s1 + s2);    //сцепление 
+            //s4 = s3;                        //копирование
+            //Console.WriteLine($"Строка \"{s3}\" скопирована в строку s4");
+            //Console.WriteLine("Выделение из строки слова " + s4.Substring(10));        //выделение подстроки
+            //string[] words = s3.Split(' ');                 //разделение на слова
+            //Console.WriteLine($"Разделим строку \"{s3}\" на слова:");
+            //foreach (string s in words)
+            //    Console.WriteLine(s);
+            //string news1 = "Hello  and goodbye";                 //вставка подстроки
+            //string news2 = news1.Insert(6, s2);
+            //Console.WriteLine(news2);
+            //Console.WriteLine($"Удаление подстроки в строке \"{news2}\": " + news2.Remove(15));         //удаление подстроки
 
-            /*2c Создайте пустую и null строку. Продемонстрируйте использование метода string.IsNullOrEmpty.Продемонстрируйте
-            что еще можно выполнить с такими строками*/
-            string emptstr = "";
-            string nullstr = null;
-            if (String.IsNullOrEmpty(emptstr))
-                Console.WriteLine("Строка emptstr пустая или null");
-            else
-                Console.WriteLine("Cтрока не null");
-            
-            if (String.IsNullOrEmpty(nullstr))
-                Console.WriteLine("Строка nullstr пустая или null");
-            else
-                Console.WriteLine("Cтрока не null");
+            ///*2c Создайте пустую и null строку. Продемонстрируйте использование метода string.IsNullOrEmpty.Продемонстрируйте
+            //что еще можно выполнить с такими строками*/
+            //string emptstr = "";
+            //string nullstr = null;
+            //if (String.IsNullOrEmpty(emptstr))
+            //    Console.WriteLine("Строка emptstr пустая или null");
+            //else
+            //    Console.WriteLine("Cтрока не null");
 
-            /*2dСоздайте строку на основе StringBuilder. Удалите определенные позиции и добавьте новые символы в начало
-             и конец строки*/            
-            StringBuilder sb = new StringBuilder(" строка моя");
-            sb.Remove(8, 3);            ///удалите опр. позиции
-            sb.Insert(0, "Это");      ///добавить символы в начало
-            sb.Append("новая");       ///и конец строки
-            Console.WriteLine(sb);
+            //if (String.IsNullOrEmpty(nullstr))
+            //    Console.WriteLine("Строка nullstr пустая или null");
+            //else
+            //    Console.WriteLine("Cтрока не null");
+
+            ///*2dСоздайте строку на основе StringBuilder. Удалите определенные позиции и добавьте новые символы в начало
+            // и конец строки*/            
+            //StringBuilder sb = new StringBuilder(" строка моя");
+            //sb.Remove(8, 3);            ///удалите опр. позиции
+            //sb.Insert(0, "Это");      ///добавить символы в начало
+            //sb.Append("новая");       ///и конец строки
+            //Console.WriteLine(sb);
+
+
+            //3a Создайте целый двумерный массив и выведите его на консоль в отформатированном виде(матрица).
+            int[,] arr = new int[3, 3] { { 5, 8, 3 }, { 7, 9, 16 }, { 49, 37, 2 } };
+            for(int i=0;i<3;i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(arr[i, j] + " ");             
+                }
+                Console.WriteLine();
+            }
+
+            /*3b Создайте одномерный массив строк. Выведите на консоль его содержимое, длину массива. 
+             Поменяйте произвольный элемент (пользователь определяет позицию и значение)*/
+            string[] arrstr = { "one", "two", "three", "four" };
+            for(int i=0; i<4;i++)
+                Console.Write(arrstr[i] + " ");
+
+            Console.WriteLine("\nДлина массива = " + arrstr.Length);
+
+            Console.Write("Ведите позицию элемента массива: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите новое значение: ");
+            string newelem = Console.ReadLine();
+            arrstr[a] = newelem;
+            for (int i = 0; i < 4; i++)
+                Console.Write(arrstr[i] + " ");
+            Console.WriteLine();
+
+            /*3c Создайте ступечатый (не выровненный) массив вещественных чисел с 3 - мя строками, в каждой из которых 2,
+             3 и 4 столбцов соответственно.Значения массива введите с консоли.*/
+            int[][] ar = new int[3][];
+            ar[0] = new int[2];
+            ar[1] = new int[3];
+            ar[2] = new int[4];
+            Console.WriteLine("Введите значения массива:");
+            for (int i = 0; i < 2; i++)                                     //ввод
+                ar[0][i] = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < 3; ++i)
+                ar[1][i] = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < 4; ++i)
+                ar[2][i] = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < 2; i++)                                     //ввод
+                Console.Write(ar[0][i] + "  ");
+            Console.WriteLine();
+            for (int i = 0; i < 3; ++i)
+                Console.Write(ar[1][i] + "  ");
+            Console.WriteLine();
+            for (int i = 0; i < 4; ++i)
+                Console.Write(ar[2][i] + "  ");
+            Console.WriteLine();
+
+            //3d Создайте неявно типизированные переменные для хранения массива и строки.
+            var massiv = new int [] { 1, 89, 105 };
+            var strstr = "Катя";
+            Console.WriteLine("\n" + strstr);
+
 
 
         }
