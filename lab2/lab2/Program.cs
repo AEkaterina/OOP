@@ -228,6 +228,7 @@ namespace lab2
                     Console.WriteLine("checked:");
                     int a = 32767;
                     Console.WriteLine(a);
+                    Console.WriteLine(a);
                 }
 
             }
