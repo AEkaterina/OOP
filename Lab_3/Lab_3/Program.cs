@@ -14,12 +14,18 @@ namespace Lab_3
         static int numberOfStudent = 0;
         public int Date;            //только год
         public string Adress;
+        public string Faculty;
+        public int Course;
+        public int Group;
+
+        //----------------------------------
+        //свойства
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Fathername { get; set; }
 
         private int telephone;          //формат 29ххххххх 291534450
-        public int Telephone
+        public int Telephone            //свойство с ограничением доступа по set
         {
             get
             {
@@ -37,10 +43,7 @@ namespace Lab_3
                 }
             }
         }
-        public string Faculty;
-        public int Course;
-        public int Group;
-
+        //---------------------------------------------
         //конструктор с параметрами по умолчанию
         public Student(string surname="", string name="", string fathername="", string faculty="", int course=0, int group=0, int date=0, string adress="", int telephone=0)
         {
@@ -82,6 +85,7 @@ namespace Lab_3
             numberOfStudent++;
             Console.WriteLine("Будущая запись");
         }
+        //----------------------------------
 
         public int Age(int date)
         {
