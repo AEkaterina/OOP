@@ -244,6 +244,8 @@ namespace lab2
 
             //func1();
             func2();
+
+            Console.ReadLine();
         }
     }
 }
