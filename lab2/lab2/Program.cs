@@ -200,21 +200,19 @@ namespace lab2
 
 
             //5Создайте локальную функцию в main и вызовите ее
-            void main(int[] mass, string st)
+            (int, int, int, char) main(int[] mass, string st)
             {
-                int max, min, sum;
-                char let;
-                max = mass.Max<int>();
-                min = mass.Min<int>();
-                sum = mass.Sum();
-                let = st[0];
-                var tup = Tuple.Create(max, min, sum, let);
-                Console.WriteLine(tup);
+                return (mass.Max<int>(), mass.Min<int>(), mass.Sum(), st[0]);
             }
 
             int[] m = { 5, 8, 1, 10, 93, 7 };
             string hello = "Hello";
-            main(m, hello);
+            Array.ForEach(m,Console.Write);
+            Console.WriteLine(hello);
+
+            (int, int, int, char) tup = main(m, hello);
+            Console.WriteLine($"Кортеж: {tup}");
+
 
 
             /*6 Определите две локальные функции
