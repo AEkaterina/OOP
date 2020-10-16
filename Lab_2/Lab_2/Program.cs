@@ -224,7 +224,7 @@ namespace lab2
                 checked
                 {
                     Console.WriteLine("checked:");
-                    int a = 2147483647;
+                    int aaaaa = 2147483647;
                     Console.WriteLine(a+1);         
                 }
 
@@ -235,7 +235,7 @@ namespace lab2
                 unchecked
                 {
                     Console.WriteLine("unchecked:");
-                    int a = 2147483647;
+                    int aaaa = 2147483647;
                     Console.WriteLine(a+1);
                 }
             }
