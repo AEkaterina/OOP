@@ -60,7 +60,7 @@ namespace Lab_3
                     student1.PrintInfo();
             }
             //-------------------------
-            Console.WriteLine("---------------------")
+            Console.WriteLine("---------------------");
             var Anonim = new {Name = "Kate", Age = 22};
             Console.WriteLine(Anonim.Name + " " + Anonim.Age);
 
