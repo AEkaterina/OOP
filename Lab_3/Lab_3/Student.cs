@@ -90,9 +90,9 @@ namespace Lab_3
         public void PrintInfo()
         {
             Console.WriteLine();
-            Console.WriteLine("Фамилия: " + Surname + "Имя: " + Name + "Отчество: " + Fathername);
-            Console.WriteLine("Год рождения: " + Date + "Адрес: " + Adress + "Телефон: " + Telephone);
-            Console.WriteLine("Факультет: " + Faculty + "Курс: " + Course + "Группа: " + Group);
+            Console.WriteLine("Фамилия: " + Surname + "\nИмя: " + Name + "\nОтчество: " + Fathername);
+            Console.WriteLine("Год рождения: " + Date + "\nАдрес: " + Adress + "\nТелефон: " + Telephone);
+            Console.WriteLine("Факультет: " + Faculty + "\nКурс: " + Course + "\nГруппа: " + Group);
             Console.WriteLine("Униальный номер (ID)" + id);
         }
         //----------------------------------------

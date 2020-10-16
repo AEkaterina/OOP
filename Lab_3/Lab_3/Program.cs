@@ -36,9 +36,9 @@ namespace Lab_3
             arr[3] = new Student("Kachanova", "Anastasia", "Vasilyevna", "IEF", 3, 5, 2001, "Mogilev", 291278059);
             arr[4] = new Student("Kazakov", "Vladimir", "Nikolaevich", "IEF", 3, 5, 1999, "Mogilev", 296263546);
 
-            string fac;
+            string fac = "";
             Console.WriteLine("Введите факультет:");
-            Console.ReadLine(fac);
+            fac = Console.ReadLine();
             foreach(Student student in arr)
             {
                 if(student.Faculty == fac)
@@ -46,18 +46,25 @@ namespace Lab_3
             }
 
             int gr, cour;
-            Console.WriteLine("Введите группу, курс и факультет: ");
-            gr=Convert.ToInt32(Console.ReadLine());
-            cour=Convert.ToInt32(Console.ReadLine());
-            foreach(Student student in arr)
+            Console.WriteLine("Введите группу: ");
+            gr = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите курс: ");
+            cour = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите факультет: ");
+            fac = Console.ReadLine();
+
+
+            foreach (Student student1 in arr)
             {
-                if(student.Faculty == fac && student.Group == gr && student.Course == cour)
-                    student.PrintInfo();
+                if(student1.Faculty == fac && student1.Group == gr && student1.Course == cour)
+                    student1.PrintInfo();
             }
             //-------------------------
-
+            Console.WriteLine("---------------------")
             var Anonim = new {Name = "Kate", Age = 22};
             Console.WriteLine(Anonim.Name + " " + Anonim.Age);
+
+            Console.ReadLine();
         }
     }
 }
