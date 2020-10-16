@@ -86,17 +86,22 @@ namespace Lab_3
             Console.WriteLine("Будущая запись");
         }
         //----------------------------------
-        //статический метод для вывода информации
-        static public void PrntInfo(Student student)
+        //метод для вывода информации
+        public void PrintInfo()
         {
             Console.WriteLine();
-            Console.WriteLine("Фамилия: " + student.Surname + "Имя: " + student.Name + "Отчество: " + student.Fathername);
-            Console.WriteLine("Год рождения: " + student.Date + "Адрес: " + student.Adress + "Телефон: " + student.Telephone);
-            Console.WriteLine("Факультет: " + student.Faculty + "Курс: " + student.Course + "Группа: " + student.Group);
-            Console.WriteLine("Униальный номер (ID)" + student.id);
+            Console.WriteLine("Фамилия: " + Surname + "Имя: " + Name + "Отчество: " + Fathername);
+            Console.WriteLine("Год рождения: " + Date + "Адрес: " + Adress + "Телефон: " + Telephone);
+            Console.WriteLine("Факультет: " + Faculty + "Курс: " + Course + "Группа: " + Group);
+            Console.WriteLine("Униальный номер (ID)" + id);
         }
         //----------------------------------------
 
+        public static void TypeOfClass()
+        {
+            Type tp = Type.GetType("Lab_3.Student");
+            Console.WriteLine(tp.AssemblyQualifiedName);
+        }
         public int Age(int date)
         {
             int age = 2020 - date;
