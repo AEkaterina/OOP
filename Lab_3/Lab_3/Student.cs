@@ -60,18 +60,8 @@ namespace Lab_3
             id = this.GetHashCode();
         }
 
-        public Student(Student a)           //конструктор с параметрами
+        public Student(Student a) : this(a.Surname, a.Name, a.Fathername, a.Faculty, a.Course, a.Group, a.Date, a.Adress, a.Telephone)          //конструктор с параметрами
         {
-            numberOfStudent++;
-            Name = a.Name;
-            Surname = a.Surname;
-            Fathername = a.Fathername;
-            Faculty = a.Faculty;
-            Course = a.Course;
-            Group = a.Group;
-            Date = a.Date;
-            Adress = a.Adress;
-            Telephone = a.Telephone;
             id = this.GetHashCode();
         }
 
