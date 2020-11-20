@@ -16,23 +16,22 @@ namespace Lab_4
             set { hIndex = massiv.Length; }
         }
 
-        public Massiv(int index)    //конструктор класса
+        public Massiv(int Index)    //конструктор класса
         {
-            massiv = new int[index];
-            hIndex = index;
+            massiv = new int[Index];
+            hIndex = Index;
         }
-        public int this[int NumOfElement]   //индексатор класса
-        {
-            get { return massiv[NumOfElement]; }
-            set { massiv[NumOfElement] = value; }
-        }
+        //public int this[int NumOfElement]   //индексатор класса
+        //{
+        //    get { return massiv[NumOfElement]; }
+        //    set { massiv[NumOfElement] = value; }
+        //}
         //перегрузка операторов 
         public static Massiv operator -(Massiv x, Massiv y) //разность
         {
             Massiv temp = new Massiv(x.Index);
-            for (int i=1;i<temp.Index;i++)
+            for (int i=0;i<temp.Index;i++)
             {
-                
                 temp[i] = x[i] - y[i];
             }
             return temp;

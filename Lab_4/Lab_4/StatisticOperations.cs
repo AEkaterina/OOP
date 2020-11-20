@@ -9,34 +9,24 @@ namespace Lab_4
 {
     static class StatisticOperations
     {
-        public static int Max(this Massiv arr)
+        public static int Max(params int[] arr)
         {
-            int max = arr[0];
-            for (int i = 0; i < arr.Index; i++)
-            {
-                if (arr[i] > max)
-                    max = arr[i];
-            }
-            return max;  
+            Array.Sort(arr);
+            return arr[arr.Length - 1];
         }
 
-        public static int Min(this Massiv arr)
+        public static int Min(params int[] arr)
         {
-            int min = arr[0];
-            for (int i = 0; i < arr.Index; i++)
-            {
-                if (arr[i] < min)
-                    min = arr[i];
-            }
-            return min;
+            Array.Sort(arr);
+            return arr[0];
         }
 
-        public static int Length(this Massiv arr) //количество
+        public static int Length(params int[] arr) //количество
         {
-            return arr.Index;
+            return arr.Length;
         }
 
-        public static int Dif(this Massiv arr)    //разница
+        public static int Dif(params int[] arr)    //разница
         {
             return Max(arr) - Min(arr);
         }
@@ -61,7 +51,7 @@ namespace Lab_4
         public static Massiv FiveElem(this Massiv arr)  //удаление 5 элементов
         {
             Massiv res = new Massiv(arr.Index - 5);
-            for(int i=0; i<arr.Index; i++)
+            for (int i = 0; i < arr.Index; i++)
             {
                 res[i] = arr[i + 5];
             }
