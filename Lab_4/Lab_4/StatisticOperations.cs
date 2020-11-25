@@ -9,24 +9,42 @@ namespace Lab_4
 {
     static class StatisticOperations
     {
-        public static int Max(params int[] arr)
+        public static int Max(this Massiv arr)
         {
-            Array.Sort(arr);
-            return arr[arr.Length - 1];
+            int max = arr[0];
+            for(int i=0; i<arr.Index;i++)
+            {
+                if (arr[i] > max)
+                    max = arr[i];
+            }
+            return max;
+            //Array.Sort(arr);
+            //return arr[arr.Length - 1];
         }
 
-        public static int Min(params int[] arr)
+        public static int Min(this Massiv arr)
         {
-            Array.Sort(arr);
-            return arr[0];
+            int min = arr[0];
+            for(int i=0;i<arr.Index;i++)
+            {
+                if (arr[i] < min)
+                    min = arr[i];
+            }
+            return min;
+            //Array.Sort(arr);
+            //return arr[0];
         }
 
-        public static int Length(params int[] arr) //количество
+        public static int Length(this Massiv arr) //количество
         {
-            return arr.Length;
+            int count = 0;
+            for(int i=0;i<arr.Index;i++)
+                count++;
+            return count;
+            //return arr.Length;
         }
 
-        public static int Dif(params int[] arr)    //разница
+        public static int Dif(this Massiv arr)    //разница
         {
             return Max(arr) - Min(arr);
         }
@@ -44,18 +62,19 @@ namespace Lab_4
         public static String DeleteVowel(this String str)   //удаление гласных
         {
             string res = "";
-            res = Regex.Replace(str, "аеиоуэюыaeiou", "");
+            res = Regex.Replace(str, "[аеиоуэюыaeiou]?", "");
             return res;
         }
 
         public static Massiv FiveElem(this Massiv arr)  //удаление 5 элементов
         {
-            Massiv res = new Massiv(arr.Index - 5);
             for (int i = 0; i < arr.Index; i++)
             {
-                res[i] = arr[i + 5];
+                arr[i] = arr[i + 1];
+                if (i == 4)
+                    continue;
             }
-            return res;
+            return arr;
         }
     }
 }

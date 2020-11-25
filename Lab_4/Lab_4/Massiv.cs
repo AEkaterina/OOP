@@ -6,39 +6,38 @@ using System.Threading.Tasks;
 
 namespace Lab_4
 {
+
     public class Massiv
     {
-        private int hIndex;
         public int[] massiv;
+        private int index;
         public int Index    //свойство класса
         {
-            get { return hIndex; }
-            set { hIndex = massiv.Length; }
+            get { return index; }
+        }
+        public Massiv(int Index)        //конструктор класса
+        {
+            index = Index;
+            massiv = new int[Index];
+        }
+        public int this[int NumOfElement]   //индексатор класса
+        {
+            get { return massiv[NumOfElement]; }
+            set { massiv[NumOfElement] = value; }
         }
 
-        public Massiv(int Index)    //конструктор класса
-        {
-            massiv = new int[Index];
-            hIndex = Index;
-        }
-        //public int this[int NumOfElement]   //индексатор класса
-        //{
-        //    get { return massiv[NumOfElement]; }
-        //    set { massiv[NumOfElement] = value; }
-        //}
         //перегрузка операторов 
-        public static Massiv operator -(Massiv x, Massiv y) //разность
+        public static Massiv operator -(Massiv x, Massiv y)
         {
             Massiv temp = new Massiv(x.Index);
-            for (int i=0;i<temp.Index;i++)
-            {
+            for (int i = 0; i < temp.Index; i++)
                 temp[i] = x[i] - y[i];
-            }
             return temp;
         }
-        public static int operator > (Massiv x, int a)  //проверка на вхождение элемента
+
+        public static int operator >(Massiv x, int a)  //проверка на вхождение элемента
         {
-            for(int i=0;i<x.Index;i++)
+            for (int i = 0; i < x.Index; i++)
             {
                 if (x[i] == a)
                     continue;
@@ -49,7 +48,7 @@ namespace Lab_4
         }
         public static int operator <(Massiv x, int a)  //проверка на не вхождение эл
         {
-            for(int i=0;i<x.Index;i++)
+            for (int i = 0; i < x.Index; i++)
             {
                 if (x[i] != a)
                     continue;
@@ -60,7 +59,7 @@ namespace Lab_4
         }
         public static bool operator !=(Massiv x, Massiv y)  //неравенство массивов
         {
-            for(int i=0; i<x.Index; i++)
+            for (int i = 0; i < x.Index; i++)
             {
                 if (x[i] != y[i])
                     return true;
@@ -83,11 +82,11 @@ namespace Lab_4
         public static Massiv operator +(Massiv x, Massiv y) //объединение массивов
         {
             Massiv temp = new Massiv(x.Index + y.Index);
-            for(int i = 0; i < x.Index; i++)
+            for (int i = 0; i < x.Index; i++)
             {
                 temp[i] = x[i];
             }
-            for(int i=0;i<y.Index;i++)
+            for (int i = 0; i < y.Index; i++)
             {
                 temp[i + x.Index] = y[i];
             }
@@ -100,11 +99,11 @@ namespace Lab_4
         }
         public void Show()
         {
-            for(int i=0;i<hIndex;i++)
+            for (int i = 0; i < index; i++)
             {
                 Console.Write(massiv[i] + " ");
             }
-        }      
+        }
         private Owner owner = new Owner(32156401, "Kate", "BelSTU");
         //вложенный класс Date
         public class Date
@@ -117,10 +116,16 @@ namespace Lab_4
         }
         public Date date = new Date();
 
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Massiv))
+                return false;
+            return this==(Massiv)obj;
+        }
+
         public override int GetHashCode()
         {
             return ToString().GetHashCode();
         }
-
     }
 }

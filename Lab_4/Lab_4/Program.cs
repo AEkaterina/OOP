@@ -15,7 +15,7 @@ namespace Lab_4
             for (int i = 0; i < arr1.Index; i++)
             {
                 arr1[i] = int.Parse(Console.ReadLine());
-            }          
+            }
             Massiv arr2 = new Massiv(5);
             for (int i = 0; i < arr2.Index; i++)
             {
@@ -48,7 +48,7 @@ namespace Lab_4
                 Console.WriteLine("число входит в arr1");
             else
                 Console.WriteLine("число не входит в arr1");
-            if (arr1 != arr2)                       //перегрузкаю !=
+            if (arr1 != arr2)                       //перегрузка !=
                 Console.WriteLine(" Arr1 != Arr2");
             else
                 Console.WriteLine("Arr1 == Arr2");
@@ -56,20 +56,13 @@ namespace Lab_4
             Console.WriteLine("--------- Удаление гласных ---------");
             string str = "Персик";
             Console.WriteLine(str.DeleteVowel());
-
-            Console.WriteLine("--------- Удаление первых 5 элементов ---------");
-            Massiv arr5 = new Massiv(15);
-            arr5 = arr4.FiveElem();
-            arr5.Show();
-            //Massiv arr5 = new Massiv(15);
-            //Console.WriteLine("------------- Расширение Dif ----------------");
-            //int r = Dif;
-            //Console.WriteLine(r);
-
-            //Console.WriteLine("------------- Количество элементов в массиве ----------------");
-            //int c = arr5.Length();
-            //Console.WriteLine(c);
-
+            Console.WriteLine();
+            Console.WriteLine("------------- Расширение Dif ----------------");
+            int r = arr4.Dif();
+            Console.WriteLine("Разница между максимальным и минимальным элементами - " + r);
+            Console.WriteLine("------------- Количество элементов в массиве arr4----------------");
+            int c = arr4.Length();
+            Console.WriteLine(c);
             Console.ReadLine();
         }
     }
