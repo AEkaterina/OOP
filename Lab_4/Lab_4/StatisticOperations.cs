@@ -72,8 +72,6 @@ namespace Lab_4
             for (int i = 0; i < arr1.Index; i++)
             {
                 arr1[i] = arr[i + 5];
-                if (i == 4)
-                    continue;
             }
             return arr1;
         }
