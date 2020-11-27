@@ -68,13 +68,14 @@ namespace Lab_4
 
         public static Massiv FiveElem(this Massiv arr)  //удаление 5 элементов
         {
-            for (int i = 0; i < arr.Index; i++)
+            Massiv arr1 = new Massiv(arr.Index - 5);            
+            for (int i = 0; i < arr1.Index; i++)
             {
-                arr[i] = arr[i + 1];
+                arr1[i] = arr[i + 5];
                 if (i == 4)
                     continue;
             }
-            return arr;
+            return arr1;
         }
     }
 }
