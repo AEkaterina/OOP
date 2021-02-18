@@ -18,8 +18,6 @@ namespace Lab_4
                     max = arr[i];
             }
             return max;
-            //Array.Sort(arr);
-            //return arr[arr.Length - 1];
         }
 
         public static int Min(this Massiv arr)
@@ -31,8 +29,6 @@ namespace Lab_4
                     min = arr[i];
             }
             return min;
-            //Array.Sort(arr);
-            //return arr[0];
         }
 
         public static int Length(this Massiv arr) //количество
@@ -41,7 +37,6 @@ namespace Lab_4
             for(int i=0;i<arr.Index;i++)
                 count++;
             return count;
-            //return arr.Length;
         }
 
         public static int Dif(this Massiv arr)    //разница

@@ -27,7 +27,7 @@ namespace Lab_4
         }
 
         //перегрузка операторов 
-        public static Massiv operator -(Massiv x, Massiv y)
+        public static Massiv operator -(Massiv x, Massiv y)     //разность
         {
             Massiv temp = new Massiv(x.Index);
             for (int i = 0; i < temp.Index; i++)

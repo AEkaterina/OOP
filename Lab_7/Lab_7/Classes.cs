@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//инвентарь, Теннис, Баскетбольный мяч
 
 namespace Lab_5
 {
@@ -28,7 +29,7 @@ namespace Lab_5
         }
     }
 
-    sealed class Tennis : Playground, ITennisBall
+    partial class Tennis : Playground, ITennisBall
     {
         public override string ToString() => "Теннис";
 
@@ -68,7 +69,7 @@ namespace Lab_5
 
         public void Play() => Console.WriteLine("Вы играете с баскетбольным мячом");
 
-        public override void DoExercise() => Console.WriteLine("У вас баскетбольная тренировка", Exp += 15);     //а.к.
+        public override void DoExercise() => Console.WriteLine("У вас баскетбольная тренировка", Exp += 15);     ///а.к.
     }
 
     class Beams : Playground
